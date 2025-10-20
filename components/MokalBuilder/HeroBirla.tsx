@@ -17,12 +17,12 @@ export default function HeroBirla() {
               </div>
 
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                <span className="text-blue-900">Build Your</span>
+                <span className="text-[#0F2B5A]">Build Your</span>
                 <br />
-                <span className="text-orange-500">Luxury Dream</span>
+                <span className="text-[#F5A623]">Luxury Dream</span>
               </h1>
 
-              <p className="text-lg text-gray-700 leading-relaxed max-w-lg">
+              <p className="text-lg text-[#4B5563] leading-relaxed max-w-lg">
                 Experience world-class construction services with Mokal Builder premium quality standards. We craft your vision into masterpieces with meticulous attention to detail.
               </p>
             </div>
