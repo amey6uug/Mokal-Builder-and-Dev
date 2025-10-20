@@ -1,0 +1,239 @@
+{
+  "projects": [
+    {
+      "title": "Modern Villa Construction",
+      "slug": "modern-villa-construction",
+      "heroImage": "https://mokal-builder.s3.amazonaws.com/projects/villa-hero.webp",
+      "gallery": [
+        "https://mokal-builder.s3.amazonaws.com/projects/villa-1.webp",
+        "https://mokal-builder.s3.amazonaws.com/projects/villa-2.webp",
+        "https://mokal-builder.s3.amazonaws.com/projects/villa-3.webp"
+      ],
+      "beforeAfterPairs": [
+        {
+          "beforeImage": "https://mokal-builder.s3.amazonaws.com/projects/villa-before.webp",
+          "afterImage": "https://mokal-builder.s3.amazonaws.com/projects/villa-after.webp",
+          "description": "Complete villa transformation from foundation to finishing"
+        }
+      ],
+      "category": "construction",
+      "clientName": "Rajesh Kumar",
+      "location": "Nagpur, Maharashtra",
+      "startDate": "2024-01-15",
+      "endDate": "2024-06-30",
+      "budgetBand": "₹50-75 Lakhs",
+      "areaSqFt": 3500,
+      "caseStudy": "<p>This modern villa project showcases our expertise in contemporary design and quality construction. The 3,500 sq ft home features an open floor plan, premium finishes, and smart home integration.</p><p>Key challenges included working within a sloping terrain and incorporating sustainable building practices. Our team delivered on time and within budget while exceeding client expectations.</p>",
+      "team": ["project-manager-1", "site-engineer-1"],
+      "seoMeta": {
+        "metaTitle": "Modern Villa Construction | Mokal Builder Nagpur",
+        "metaDescription": "Complete villa construction project in Nagpur featuring contemporary design, premium finishes, and sustainable building practices.",
+        "keywords": "villa construction, modern home, Nagpur builder, luxury villa",
+        "canonicalUrl": "https://mokalbuilder.com/projects/modern-villa-construction",
+        "ogImage": "https://mokal-builder.s3.amazonaws.com/projects/villa-og.webp"
+      }
+    },
+    {
+      "title": "Kitchen Renovation Excellence",
+      "slug": "kitchen-renovation-excellence",
+      "heroImage": "https://mokal-builder.s3.amazonaws.com/projects/kitchen-hero.webp",
+      "gallery": [
+        "https://mokal-builder.s3.amazonaws.com/projects/kitchen-1.webp",
+        "https://mokal-builder.s3.amazonaws.com/projects/kitchen-2.webp",
+        "https://mokal-builder.s3.amazonaws.com/projects/kitchen-3.webp"
+      ],
+      "beforeAfterPairs": [
+        {
+          "beforeImage": "https://mokal-builder.s3.amazonaws.com/projects/kitchen-before.webp",
+          "afterImage": "https://mokal-builder.s3.amazonaws.com/projects/kitchen-after.webp",
+          "description": "Complete kitchen renovation with modern appliances and premium finishes"
+        }
+      ],
+      "category": "renovation",
+      "clientName": "Priya Sharma",
+      "location": "Pune, Maharashtra",
+      "startDate": "2024-03-01",
+      "endDate": "2024-04-15",
+      "budgetBand": "₹8-12 Lakhs",
+      "areaSqFt": 400,
+      "caseStudy": "<p>This kitchen renovation transformed a dated 1980s kitchen into a modern, functional space. We incorporated premium quartz countertops, custom cabinetry, and energy-efficient appliances.</p><p>The project was completed in just 6 weeks with minimal disruption to the family's daily routine. The result is a space that combines beauty with practicality.</p>",
+      "team": ["interior-designer-1", "site-supervisor-1"],
+      "seoMeta": {
+        "metaTitle": "Kitchen Renovation | Modern Kitchen Design | Mokal Builder",
+        "metaDescription": "Complete kitchen renovation in Pune featuring modern design, premium finishes, and functional layout. Expert renovation services.",
+        "keywords": "kitchen renovation, modern kitchen, Pune renovation, home improvement",
+        "canonicalUrl": "https://mokalbuilder.com/projects/kitchen-renovation-excellence",
+        "ogImage": "https://mokal-builder.s3.amazonaws.com/projects/kitchen-og.webp"
+      }
+    },
+    {
+      "title": "Advanced Waterproofing Solutions",
+      "slug": "advanced-waterproofing-solutions",
+      "heroImage": "https://mokal-builder.s3.amazonaws.com/projects/waterproofing-hero.webp",
+      "gallery": [
+        "https://mokal-builder.s3.amazonaws.com/projects/waterproofing-1.webp",
+        "https://mokal-builder.s3.amazonaws.com/projects/waterproofing-2.webp",
+        "https://mokal-builder.s3.amazonaws.com/projects/waterproofing-3.webp"
+      ],
+      "beforeAfterPairs": [
+        {
+          "beforeImage": "https://mokal-builder.s3.amazonaws.com/projects/waterproofing-before.webp",
+          "afterImage": "https://mokal-builder.s3.amazonaws.com/projects/waterproofing-after.webp",
+          "description": "Comprehensive waterproofing treatment for terrace and bathrooms"
+        }
+      ],
+      "category": "waterproofing",
+      "clientName": "Amit Patel",
+      "location": "Mumbai, Maharashtra",
+      "startDate": "2024-02-10",
+      "endDate": "2024-03-05",
+      "budgetBand": "₹3-5 Lakhs",
+      "areaSqFt": 1200,
+      "caseStudy": "<p>This waterproofing project addressed severe water leakage issues in a 15-year-old apartment building. We implemented advanced waterproofing membranes and drainage solutions.</p><p>Our comprehensive approach included terrace waterproofing, bathroom renovations, and balcony treatments. The building has remained completely dry even during the heaviest monsoon rains.</p>",
+      "team": ["waterproofing-specialist-1", "quality-inspector-1"],
+      "seoMeta": {
+        "metaTitle": "Waterproofing Solutions | Terrace & Bathroom Waterproofing | Mokal Builder",
+        "metaDescription": "Advanced waterproofing solutions for terraces, bathrooms, and balconies. Expert waterproofing contractors in Maharashtra.",
+        "keywords": "waterproofing, terrace waterproofing, bathroom waterproofing, leak repair",
+        "canonicalUrl": "https://mokalbuilder.com/projects/advanced-waterproofing-solutions",
+        "ogImage": "https://mokal-builder.s3.amazonaws.com/projects/waterproofing-og.webp"
+      }
+    }
+  ],
+  "services": [
+    {
+      "title": "Residential Construction",
+      "slug": "residential-construction",
+      "iconSvg": "<svg class='w-12 h-12' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4'/></svg>",
+      "shortDescription": "Transform your vision into reality with our comprehensive residential construction services. From foundation to finish, we deliver quality homes that exceed expectations.",
+      "longDescription": "<p>Our residential construction services cover everything from initial planning to final handover. We specialize in modern villa construction, apartment buildings, and custom homes.</p><p>Each project includes architectural design, structural engineering, quality construction, and premium finishing touches. We work closely with clients to ensure their vision becomes reality.</p>",
+      "duration": "6-18 months",
+      "priceBands": [
+        {
+          "name": "Standard",
+          "priceRange": "₹1,200-1,800 per sq ft",
+          "features": "Quality construction, standard finishes, 2-year warranty"
+        },
+        {
+          "name": "Premium",
+          "priceRange": "₹1,800-2,500 per sq ft",
+          "features": "Premium materials, modern design, smart home features, 5-year warranty"
+        },
+        {
+          "name": "Luxury",
+          "priceRange": "₹2,500+ per sq ft",
+          "features": "Luxury finishes, custom design, high-end appliances, 10-year warranty"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How long does residential construction take?",
+          "answer": "<p>Construction timelines vary based on project size and complexity. A typical 2,000 sq ft villa takes 12-15 months from foundation to handover. We provide detailed timelines during the planning phase.</p>"
+        },
+        {
+          "question": "Do you provide architectural design services?",
+          "answer": "<p>Yes, we offer complete architectural design services or can work with your existing plans. Our team includes licensed architects who ensure designs meet local building codes and regulations.</p>"
+        }
+      ],
+      "relatedProjects": ["modern-villa-construction"]
+    },
+    {
+      "title": "Renovation & Remodeling",
+      "slug": "renovation-remodeling",
+      "iconSvg": "<svg class='w-12 h-12' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z'/><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'/></svg>",
+      "shortDescription": "Breathe new life into your existing space with our expert renovation services. Modern upgrades, functional improvements, and stunning transformations await.",
+      "longDescription": "<p>Our renovation services transform outdated spaces into modern, functional areas. From kitchen makeovers to full home renovations, we handle projects of all sizes.</p><p>We specialize in bathroom renovations, kitchen remodeling, room additions, and complete home makeovers. Each project is tailored to your needs and budget.</p>",
+      "duration": "2-12 weeks",
+      "priceBands": [
+        {
+          "name": "Basic Refresh",
+          "priceRange": "₹50,000-2,00,000",
+          "features": "Painting, minor repairs, basic upgrades"
+        },
+        {
+          "name": "Full Renovation",
+          "priceRange": "₹2,00,000-10,00,000",
+          "features": "Complete room makeover, structural changes, premium finishes"
+        },
+        {
+          "name": "Luxury Upgrade",
+          "priceRange": "₹10,00,000+",
+          "features": "High-end materials, custom design, smart home integration"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can you work around my schedule?",
+          "answer": "<p>Yes, we understand renovations can be disruptive. We work flexible hours and can schedule work around your availability. For larger projects, we provide detailed timelines and keep you updated on progress.</p>"
+        },
+        {
+          "question": "Do you handle permits and approvals?",
+          "answer": "<p>Yes, we manage all necessary permits and approvals for renovation projects. Our team is familiar with local building codes and regulations in Maharashtra.</p>"
+        }
+      ],
+      "relatedProjects": ["kitchen-renovation-excellence"]
+    },
+    {
+      "title": "Waterproofing & Finishes",
+      "slug": "waterproofing-finishes",
+      "iconSvg": "<svg class='w-12 h-12' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'/></svg>",
+      "shortDescription": "Protect your investment with our advanced waterproofing solutions and premium finishes. Quality materials and expert installation ensure lasting protection and beauty.",
+      "longDescription": "<p>Our waterproofing services protect your property from water damage and leaks. We use advanced materials and techniques to ensure long-lasting protection.</p><p>From terrace waterproofing to bathroom treatments, we provide comprehensive solutions that prevent water damage and maintain property value.</p>",
+      "duration": "1-4 weeks",
+      "priceBands": [
+        {
+          "name": "Basic Treatment",
+          "priceRange": "₹15,000-50,000",
+          "features": "Standard waterproofing materials, 3-year warranty"
+        },
+        {
+          "name": "Advanced Protection",
+          "priceRange": "₹50,000-1,50,000",
+          "features": "Premium materials, drainage solutions, 7-year warranty"
+        },
+        {
+          "name": "Complete System",
+          "priceRange": "₹1,50,000+",
+          "features": "Multi-layer protection, monitoring systems, 10-year warranty"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How long does waterproofing last?",
+          "answer": "<p>Our waterproofing treatments are designed to last 7-10 years with proper maintenance. We provide detailed care instructions and warranty coverage for peace of mind.</p>"
+        },
+        {
+          "question": "Do you fix existing leaks?",
+          "answer": "<p>Yes, we specialize in leak repair and prevention. Our team diagnoses the source of leaks and provides comprehensive solutions to prevent future water damage.</p>"
+        }
+      ],
+      "relatedProjects": ["advanced-waterproofing-solutions"]
+    }
+  ],
+  "testimonials": [
+    {
+      "clientName": "Rajesh Kumar",
+      "location": "Nagpur, Maharashtra",
+      "quote": "Mokal Builder exceeded our expectations with their professional team and quality workmanship. Our new home is everything we dreamed of and more. The attention to detail and communication throughout the project was outstanding.",
+      "photo": "https://mokal-builder.s3.amazonaws.com/testimonials/rajesh-kumar.webp",
+      "projectRef": "modern-villa-construction",
+      "rating": "5"
+    },
+    {
+      "clientName": "Priya Sharma",
+      "location": "Pune, Maharashtra",
+      "quote": "From planning to completion, the renovation process was smooth and efficient. Highly recommend their services for any home improvement needs. The team was professional and delivered exactly what we wanted.",
+      "photo": "https://mokal-builder.s3.amazonaws.com/testimonials/priya-sharma.webp",
+      "projectRef": "kitchen-renovation-excellence",
+      "rating": "5"
+    },
+    {
+      "clientName": "Amit Patel",
+      "location": "Mumbai, Maharashtra",
+      "quote": "The waterproofing work was done expertly, and we've had no issues even during heavy rains. Trustworthy and reliable contractors who stand behind their work with excellent warranties.",
+      "photo": "https://mokal-builder.s3.amazonaws.com/testimonials/amit-patel.webp",
+      "projectRef": "advanced-waterproofing-solutions",
+      "rating": "5"
+    }
+  ]
+}

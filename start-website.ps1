@@ -1,4 +1,4 @@
-c# Mokal Builder - Auto Start Script
+cs# Mokal Builder - Auto Start Script
 # This script starts the Node.js server and opens the website in your default browser
 
 Write-Host "`n🚀 Starting Mokal Builder Website...`n" -ForegroundColor Cyan
