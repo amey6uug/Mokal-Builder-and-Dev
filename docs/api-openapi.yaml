@@ -1,0 +1,349 @@
+openapi: 3.0.3
+info:
+  title: Mokal Builder API
+  version: 1.0.0
+  description: API for Mokal Builder construction company website
+
+servers:
+  - url: https://api.mokalbuilder.com
+    description: Production server
+  - url: http://localhost:3001
+    description: Development server
+
+paths:
+  /api/leads:
+    post:
+      summary: Create a new lead
+      description: Submit a lead form with contact information and project details
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - phone
+                - email
+                - source
+              properties:
+                name:
+                  type: string
+                  description: Full name of the lead
+                  example: "Rajesh Kumar"
+                phone:
+                  type: string
+                  description: Phone number
+                  example: "+91 9876543210"
+                email:
+                  type: string
+                  format: email
+                  description: Email address
+                  example: "rajesh@example.com"
+                source:
+                  type: string
+                  description: How they found us
+                  example: "website"
+                serviceInterest:
+                  type: string
+                  enum: [construction, renovation, waterproofing]
+                  description: Type of service interested in
+                area:
+                  type: number
+                  description: Area in square feet
+                  example: 1200
+                budget:
+                  type: string
+                  description: Budget range
+                  example: "50-75 Lakhs"
+                notes:
+                  type: string
+                  description: Additional notes
+                  example: "Need urgent completion"
+      responses:
+        '201':
+          description: Lead created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  leadId:
+                    type: string
+                    example: "lead_123456"
+                  status:
+                    type: string
+                    example: "new"
+                  message:
+                    type: string
+                    example: "Lead submitted successfully"
+        '400':
+          description: Invalid request data
+        '429':
+          description: Rate limit exceeded
+        '500':
+          description: Server error
+
+  /api/estimate:
+    post:
+      summary: Get project estimate
+      description: Calculate provisional project estimate based on area and service type
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - area
+                - serviceType
+              properties:
+                area:
+                  type: number
+                  description: Area in square feet
+                  example: 1200
+                serviceType:
+                  type: string
+                  enum: [construction, renovation, waterproofing]
+                  description: Type of service
+                  example: "construction"
+                qualityBand:
+                  type: string
+                  enum: [standard, premium, luxury]
+                  description: Quality level
+                  example: "premium"
+      responses:
+        '200':
+          description: Estimate calculated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  estimateId:
+                    type: string
+                    example: "est_123456"
+                  priceRange:
+                    type: object
+                    properties:
+                      min:
+                        type: number
+                        example: 1800000
+                      max:
+                        type: number
+                        example: 2500000
+                      currency:
+                        type: string
+                        example: "INR"
+                  assumptions:
+                    type: array
+                    items:
+                      type: string
+                    example: ["Standard finishes included", "Site preparation required", "3-month timeline"]
+                  nextSteps:
+                    type: array
+                    items:
+                      type: string
+                    example: ["Site visit required", "Detailed architectural plans needed"]
+        '400':
+          description: Invalid request data
+        '500':
+          description: Server error
+
+  /api/projects:
+    get:
+      summary: Get projects list
+      description: Retrieve paginated list of projects with optional filtering
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          description: Page number
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 50
+            default: 12
+          description: Items per page
+        - name: filter
+          in: query
+          schema:
+            type: string
+            enum: [construction, renovation, waterproofing]
+          description: Filter by category
+        - name: search
+          in: query
+          schema:
+            type: string
+          description: Search in title and description
+      responses:
+        '200':
+          description: Projects retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        title:
+                          type: string
+                        slug:
+                          type: string
+                        heroImage:
+                          type: string
+                        category:
+                          type: string
+                        location:
+                          type: string
+                        completionDate:
+                          type: string
+                          format: date
+                  total:
+                    type: integer
+                  page:
+                    type: integer
+                  totalPages:
+                    type: integer
+
+  /api/project/{slug}:
+    get:
+      summary: Get project details
+      description: Retrieve detailed information for a specific project
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Project slug
+      responses:
+        '200':
+          description: Project details retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  title:
+                    type: string
+                  slug:
+                    type: string
+                  heroImage:
+                    type: string
+                  gallery:
+                    type: array
+                    items:
+                      type: string
+                  beforeAfterPairs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        beforeImage:
+                          type: string
+                        afterImage:
+                          type: string
+                        description:
+                          type: string
+                  category:
+                    type: string
+                  clientName:
+                    type: string
+                  location:
+                    type: string
+                  startDate:
+                    type: string
+                    format: date
+                  endDate:
+                    type: string
+                    format: date
+                  budgetBand:
+                    type: string
+                  areaSqFt:
+                    type: number
+                  caseStudy:
+                    type: string
+                  team:
+                    type: array
+                    items:
+                      type: string
+                  seoMeta:
+                    type: object
+                    properties:
+                      metaTitle:
+                        type: string
+                      metaDescription:
+                        type: string
+        '404':
+          description: Project not found
+
+  /api/uploads/presign:
+    post:
+      summary: Get presigned upload URL
+      description: Generate presigned S3 URL for secure file uploads
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - filename
+                - contentType
+              properties:
+                filename:
+                  type: string
+                  description: Original filename
+                  example: "project-hero.webp"
+                contentType:
+                  type: string
+                  description: MIME type
+                  example: "image/webp"
+                folder:
+                  type: string
+                  description: Upload folder
+                  example: "projects"
+      responses:
+        '200':
+          description: Presigned URL generated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uploadUrl:
+                    type: string
+                    description: Presigned S3 upload URL
+                  objectKey:
+                    type: string
+                    description: S3 object key
+                  publicUrl:
+                    type: string
+                    description: Public URL after upload
+        '400':
+          description: Invalid request data
+        '500':
+          description: Server error
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
