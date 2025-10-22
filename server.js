@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/html/index.html'));
 });
 
+app.get('/index', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/index.html'));
+});
+
 // Route for services page
 app.get('/services', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/html/services.html'));
@@ -55,7 +59,7 @@ app.use((req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`\n✨ Mokal Builder Website Running!\n`);
   console.log(`🌐 Open your browser: http://localhost:${PORT}`);
