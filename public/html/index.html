@@ -276,7 +276,7 @@
             gap: 30px;
             padding: 60px 40px;
             background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
-            border-top: 1px solid var(--border-gray);
+            border-top: 3px solid var(--accent);
             border-bottom: 1px solid var(--border-gray);
             max-width: 1400px;
             margin: 0 auto;
@@ -428,7 +428,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            border-top: 1px solid var(--border-gray);
+            border-top: 3px solid var(--accent);
             padding-top: 20px;
         }
 
@@ -454,38 +454,12 @@
             color: var(--text-light-gray);
         }
 
-        /* CTA */
-        .cta-section {
-            padding: 80px 40px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            text-align: center;
-            border-top: 1px solid var(--border-gray);
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 20px;
-            color: var(--bg-white);
-        }
-
-        .cta-description {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         /* FOOTER */
         .footer {
-            background: var(--text-dark);
-            border-top: 1px solid var(--border-gray);
+            background: var(--primary-dark);
+            border-top: 3px solid var(--accent);
             padding: 60px 40px 20px;
-            max-width: 1400px;
+            max-width: 100%;
             margin: 0 auto;
         }
 
@@ -496,10 +470,23 @@
             margin-bottom: 40px;
         }
 
+        .footer-section {
+            padding-right: 20px;
+            border-right: 2px solid rgba(245, 166, 35, 0.15);
+        }
+
+        .footer-section:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
         .footer-section h4 {
-            color: var(--bg-white);
+            color: var(--accent);
             margin-bottom: 20px;
             font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .footer-section ul {
@@ -514,21 +501,25 @@
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .footer-section a:hover {
-            color: var(--primary-light);
+            color: var(--accent);
+            padding-left: 5px;
         }
 
         .footer-section p {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 8px;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
+            border-top: 2px solid rgba(245, 166, 35, 0.3);
+            padding-top: 30px;
             text-align: center;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
         }
 
@@ -724,28 +715,18 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <h2 class="cta-title">Ready to Build Something Extraordinary?</h2>
-        <p class="cta-description">Let our team of experts transform your vision into reality. Get started with a free consultation today.</p>
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <a href="/estimator" class="btn-primary">📊 Get Free Estimate</a>
-            <a href="/contact" class="btn-secondary">📞 Contact Us</a>
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-section">
                 <h4>About Mokal Builder</h4>
-                <p style="color: var(--text-muted); line-height: 1.8;">Leading construction company specializing in luxury residential, commercial, and renovation projects with 15+ years of excellence.</p>
+                <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.8;">Leading construction company specializing in luxury residential, commercial, and renovation projects with 15+ years of excellence.</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/portfolio">Portfolio</a></li>
                     <li><a href="/contact">Contact</a></li>
@@ -762,9 +743,9 @@
             </div>
             <div class="footer-section">
                 <h4>Contact Information</h4>
-                <p style="color: var(--text-muted); margin-bottom: 8px;">📞 +91-9876543210</p>
-                <p style="color: var(--text-muted); margin-bottom: 8px;">📧 info@mokalbuilder.com</p>
-                <p style="color: var(--text-muted);">📍 Mumbai, India</p>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px;">📞 +91-9876543210</p>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px;">📧 info@mokalbuilder.com</p>
+                <p style="color: rgba(255, 255, 255, 0.8);">📍 Mumbai, India</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -799,3 +780,6 @@
     </script>
 </body>
 </html>
+
+
+
