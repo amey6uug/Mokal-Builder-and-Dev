@@ -1,14 +1,11 @@
-# Static HTML site configuration - NO frameworks
+# Static HTML site configuration
 [build]
-  command = "ls -la public/html"
+  command = "echo 'Static HTML site - no build needed'"
   publish = "public"
 
 [build.environment]
   NODE_VERSION = "18"
-
-# This is a pure static HTML site, not Next.js
-[[plugins]]
-  package = "/dev/null"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [[redirects]]
   from = "/"
