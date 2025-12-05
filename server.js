@@ -33,6 +33,11 @@ app.get('/portfolio', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/html/portfolio.html'));
 });
 
+// Route for project details page
+app.get('/project-details', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/project-details.html'));
+});
+
 // Route for faq page
 app.get('/faq', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/html/faq.html'));

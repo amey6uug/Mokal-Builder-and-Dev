@@ -1,11 +1,51 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+  command = "npm install"
+  publish = "public"
 
-[functions]
-  node_bundler = "esbuild"
+[build.environment]
+  NODE_VERSION = "18"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/"
+  to = "/html/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/services"
+  to = "/html/services.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/html/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/html/portfolio.html"
+  status = 200
+
+[[redirects]]
+  from = "/project-details"
+  to = "/html/project-details.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/html/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/faq"
+  to = "/html/faq.html"
+  status = 200
+
+[[redirects]]
+  from = "/team"
+  to = "/html/team.html"
+  status = 200
+
+[[redirects]]
+  from = "/estimator"
+  to = "/html/estimator.html"
   status = 200
