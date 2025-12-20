@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Estimator - Mokal Builder</title>
+    <title>Project Cost Estimator | Instant Construction Quote Calculator | Mokal Builder</title>
+    <meta name="description" content="Get instant construction cost estimates with Mokal Builder's project calculator. Calculate approximate costs for residential, commercial, renovation, and interior design projects in seconds.">
+    <meta name="keywords" content="construction cost estimator, project cost calculator, building quote calculator, residential construction cost, commercial construction estimate, renovation cost calculator, mokal builder">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -554,6 +556,17 @@
     <section class="section">
         <h2 class="section-title">Quick Cost Calculator</h2>
         
+        <!-- DISCLAIMER -->
+        <div style="max-width: 1200px; margin: 0 auto 40px; padding: 20px; background: #FFF3CD; border-left: 4px solid #FFC107; border-radius: 8px;">
+            <h4 style="color: #856404; margin-bottom: 10px; font-size: 1.1rem;">⚠️ Important Disclaimer</h4>
+            <p style="color: #856404; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                <strong>Please Note:</strong> The estimates provided by this calculator are approximate and for informational purposes only. 
+                Actual project costs may vary based on site conditions, material availability, design complexity, location, labor costs, and market fluctuations. 
+                This tool does NOT constitute a binding quote or contractual agreement. For an accurate quote, please schedule a consultation and site inspection with our team. 
+                Mokal Builder is not liable for any decisions made based solely on these estimates.
+            </p>
+        </div>
+        
         <div class="estimator-container">
             <!-- FORM -->
             <form class="estimator-form" onsubmit="handleSubmit(event)">
@@ -738,19 +751,46 @@
 
         function handleSubmit(event) {
             event.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const service = document.getElementById('service').value;
+            const quality = document.getElementById('quality').value;
             const total = document.getElementById('resultTotal').textContent;
 
-            if (!name || !phone || !email) {
-                alert('Please fill in all required fields (Name, Phone, Email)');
-                return;
+            // Validation checks
+            if (!service || !quality) {
+                alert('Please select both Service Type and Quality Level to calculate your estimate.');
+                return false;
             }
 
-            alert(`Thank you ${name}! Your estimated quote is ${total}. We will contact you at ${phone} shortly with detailed information.`);
+            if (name.length < 2) {
+                alert('Please enter a valid name (at least 2 characters).');
+                return false;
+            }
+
+            // Phone validation (Indian format)
+            const phoneRegex = /^[6-9]\d{9}$/;
+            const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+            if (!phoneRegex.test(cleanPhone) && cleanPhone.length !== 10) {
+                alert('Please enter a valid 10-digit Indian phone number.');
+                return false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            // All validations passed
+            alert(`Thank you ${name}! Your estimated quote is ${total}. We will contact you at ${phone} within 24 hours with a detailed breakdown.\n\nReminder: This is an approximate estimate. Final costs will be determined after site inspection.`);
             event.target.reset();
             calculateEstimate();
+            return true;
         }
 
         // Navbar scroll effect
