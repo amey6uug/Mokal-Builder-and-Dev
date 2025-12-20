@@ -37,7 +37,7 @@ export default function HeroBirla() {
                 <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </Link>
               <Link
-                href="/contacts"
+                href="/contact"
                 className="px-8 py-4 border-2 border-blue-900 text-blue-900 rounded-lg font-bold hover:bg-blue-50 transition-all duration-300"
               >
                 Get Free Consultation

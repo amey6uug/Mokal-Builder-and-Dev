@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -166,20 +167,24 @@ const Testimonials = () => {
               Ready to experience the Mokal Builder difference? Start your journey towards your dream home today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg"
-              >
-                Get Free Consultation
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-blue-500/20 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-500/30 transition-all duration-300 border border-white/20"
-              >
-                View All Reviews
-              </motion.button>
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg"
+                >
+                  Get Free Consultation
+                </motion.button>
+              </Link>
+              <Link href="/portfolio">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-blue-500/20 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-500/30 transition-all duration-300 border border-white/20"
+                >
+                  View All Reviews
+                </motion.button>
+              </Link>
             </div>
           </div>
         </motion.div>
