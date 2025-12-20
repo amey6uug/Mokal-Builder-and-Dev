@@ -58,9 +58,24 @@ app.get('/estimator', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/html/estimator.html'));
 });
 
-// 404 handler
+// Route for privacy policy page
+app.get('/privacy', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/privacy.html'));
+});
+
+// Route for terms of service page
+app.get('/terms', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/html/terms.html'));
+});
+
+// Redirect /contacts to /contact (fix common typo)
+app.get('/contacts', (req, res) => {
+  res.redirect(301, '/contact');
+});
+
+// 404 handler - serve custom 404 page
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, 'public/html/index.html'));
+  res.status(404).sendFile(path.join(__dirname, 'public/html/404.html'));
 });
 
 // Start server
