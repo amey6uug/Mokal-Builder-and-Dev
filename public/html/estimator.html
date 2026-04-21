@@ -7,6 +7,7 @@
     <meta name="description" content="Get instant construction cost estimates with Mokal Builder's project calculator. Calculate approximate costs for residential, commercial, renovation, and interior design projects in seconds.">
     <meta name="keywords" content="construction cost estimator, project cost calculator, building quote calculator, residential construction cost, commercial construction estimate, renovation cost calculator, mokal builder">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -270,6 +271,7 @@
             gap: 60px;
             max-width: 1200px;
             margin: 0 auto;
+            align-items: start;
         }
 
         @media (max-width: 768px) {
@@ -284,6 +286,7 @@
             background: var(--bg-lighter);
             padding: 40px;
             border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(15, 43, 90, 0.08);
         }
 
         .estimator-form h3 {
@@ -291,6 +294,16 @@
             color: var(--text-dark);
             margin-bottom: 30px;
             font-weight: 700;
+        }
+
+        .estimator-intro {
+            margin-bottom: 25px;
+            padding: 16px 18px;
+            border-left: 4px solid var(--accent);
+            background: rgba(245, 166, 35, 0.08);
+            border-radius: 8px;
+            color: var(--text-gray);
+            line-height: 1.7;
         }
 
         .form-group {
@@ -339,6 +352,34 @@
             font-weight: 700;
         }
 
+        .bill-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .summary-chip {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .summary-chip span {
+            display: block;
+            font-size: 0.78rem;
+            opacity: 0.8;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .summary-chip strong {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
         input[type="range"] {
             width: 100%;
             height: 6px;
@@ -377,12 +418,72 @@
             color: var(--bg-white);
             position: sticky;
             top: 100px;
+            box-shadow: 0 20px 40px rgba(15, 43, 90, 0.2);
         }
 
         .estimator-results h3 {
             font-size: 1.3rem;
             margin-bottom: 30px;
             font-weight: 700;
+        }
+
+        .bill-structure-note {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 22px;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .bill-table-wrap {
+            overflow-x: auto;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .bill-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 560px;
+        }
+
+        .bill-table th,
+        .bill-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            vertical-align: top;
+        }
+
+        .bill-table th {
+            text-align: left;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.78);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .bill-table td {
+            font-size: 0.95rem;
+        }
+
+        .bill-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .bill-item-note {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.72);
+            line-height: 1.45;
+        }
+
+        .amount-cell,
+        .rate-cell,
+        .qty-cell,
+        .unit-cell {
+            white-space: nowrap;
         }
 
         .result-item {
@@ -525,7 +626,7 @@
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
             <a href="/" class="logo">
-                <div class="logo-icon"><img src="/images/logo.jpg" alt="Mokal Builder Logo"></div>
+                <div class="logo-icon"><img src="/images/logos/logo.jpg" alt="Mokal Builder Logo"></div>
                 <div class="logo-text">
                     <h1>Mokal Builder</h1>
                     <p>PREMIUM CONSTRUCTIONS</p>
@@ -554,7 +655,7 @@
 
     <!-- ESTIMATOR -->
     <section class="section">
-        <h2 class="section-title">Quick Cost Calculator</h2>
+        <h2 class="section-title">Detailed Cost Structure</h2>
         
         <!-- DISCLAIMER -->
         <div style="max-width: 1200px; margin: 0 auto 40px; padding: 20px; background: #FFF3CD; border-left: 4px solid #FFC107; border-radius: 8px;">
@@ -562,6 +663,7 @@
             <p style="color: #856404; font-size: 0.95rem; line-height: 1.6; margin: 0;">
                 <strong>Please Note:</strong> The estimates provided by this calculator are approximate and for informational purposes only. 
                 Actual project costs may vary based on site conditions, material availability, design complexity, location, labor costs, and market fluctuations. 
+                The pricing below is based on the bill structure you shared and scales with project size and finish level.
                 This tool does NOT constitute a binding quote or contractual agreement. For an accurate quote, please schedule a consultation and site inspection with our team. 
                 Mokal Builder is not liable for any decisions made based solely on these estimates.
             </p>
@@ -571,6 +673,9 @@
             <!-- FORM -->
             <form class="estimator-form" onsubmit="handleSubmit(event)">
                 <h3>Your Project Details</h3>
+                <div class="estimator-intro">
+                    Use the controls below to scale the reference bill structure into a project estimate. The right panel updates the itemized cost structure live.
+                </div>
                 
                 <div class="form-group">
                     <label for="service">Service Type *</label>
@@ -585,19 +690,19 @@
 
                 <div class="range-group">
                     <label for="area">
-                        Project Area (Sq.Ft)
+                        Project Size (Sq.Ft)
                         <span class="range-value" id="areaValue">1000</span>
                     </label>
-                    <input type="range" id="area" min="500" max="50000" value="1000" step="100" oninput="updateAreaValue(); calculateEstimate()">
+                    <input type="range" id="area" min="500" max="5000" value="1000" step="50" oninput="updateAreaValue(); calculateEstimate()">
                 </div>
 
                 <div class="form-group">
                     <label for="quality">Quality Level *</label>
                     <select id="quality" onchange="calculateEstimate()" required>
                         <option value="">Select Quality</option>
-                        <option value="standard">Standard (₹500-800/sq.ft)</option>
-                        <option value="premium">Premium (₹800-1200/sq.ft)</option>
-                        <option value="luxury">Luxury (₹1200-2000/sq.ft)</option>
+                        <option value="standard">Standard Finish</option>
+                        <option value="premium">Premium Finish</option>
+                        <option value="luxury">Luxury Finish</option>
                     </select>
                 </div>
 
@@ -629,35 +734,49 @@
 
             <!-- RESULTS -->
             <div class="estimator-results">
-                <h3>📊 Estimated Cost</h3>
-                
-                <div class="result-item">
-                    <div class="result-label">Project Area</div>
-                    <div class="result-value" id="resultArea">1,000 sq.ft</div>
+                <h3>📊 Itemized Bill Structure</h3>
+                <p class="bill-structure-note">
+                    Reference bill structure based on your shared estimate. Values scale with area and finish level so you can use it as a live estimator for different project sizes.
+                </p>
+
+                <div class="bill-summary">
+                    <div class="summary-chip">
+                        <span>Project Area</span>
+                        <strong id="summaryReferenceArea">1,000 Sq.Ft</strong>
+                    </div>
+                    <div class="summary-chip">
+                        <span>Scale Factor</span>
+                        <strong id="summaryScaleFactor">1.00x</strong>
+                    </div>
+                    <div class="summary-chip">
+                        <span>Packages</span>
+                        <strong id="summaryPackages">6</strong>
+                    </div>
                 </div>
 
-                <div class="result-item">
-                    <div class="result-label">Per Sq.Ft Cost</div>
-                    <div class="result-value" id="resultPerSqft">₹650</div>
-                </div>
-
-                <div class="result-item">
-                    <div class="result-label">Material Cost</div>
-                    <div class="result-value" id="resultMaterial">₹6,50,000</div>
-                </div>
-
-                <div class="result-item">
-                    <div class="result-label">Labor Cost (30%)</div>
-                    <div class="result-value" id="resultLabor">₹1,95,000</div>
+                <div class="bill-table-wrap">
+                    <table class="bill-table">
+                        <thead>
+                            <tr>
+                                <th>Sr.</th>
+                                <th>Item Description</th>
+                                <th>Qty</th>
+                                <th>Unit</th>
+                                <th>Rate</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="billBody"></tbody>
+                    </table>
                 </div>
 
                 <div class="estimate-total">
                     <div class="estimate-label">TOTAL ESTIMATED COST</div>
-                    <div class="estimate-amount" id="resultTotal">₹8,45,000</div>
+                    <div class="estimate-amount" id="resultTotal">₹0</div>
                     <div class="estimate-note">
-                        ✓ Includes materials, labor & supervision<br>
-                        ✓ Cost breakdown provided separately<br>
-                        ✓ Valid for 15 days
+                        ✓ Includes the reference cost structure you shared<br>
+                        ✓ Scales with project size and finish level<br>
+                        ✓ Final quote will depend on site inspection and exact scope
                     </div>
                 </div>
             </div>
@@ -691,7 +810,7 @@
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p style="margin-bottom: 8px;">📞 +91-9876543210</p>
+                <p style="margin-bottom: 8px;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i>+91-9876543210</p>
                 <p style="margin-bottom: 8px;">📧 info@mokalbuilder.com</p>
                 <p>📍 Mumbai, India</p>
             </div>
@@ -702,13 +821,87 @@
     </footer>
 
     <!-- WHATSAPP -->
-    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn">💬</a>
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
 
     <script>
+        const referenceArea = 1000;
+        const estimateRows = [
+            {
+                description: 'Civil works and ceiling package',
+                note: 'False ceiling, electrical points, MCB, earthing, distribution box, and exterior point work.',
+                qty: 1,
+                unit: 'lot',
+                amount: 585982.48
+            },
+            {
+                description: 'Curtains and window treatment package',
+                note: 'Rolling curtains and finish matching as per design and color selection.',
+                qty: 1,
+                unit: 'lot',
+                amount: 39985.00
+            },
+            {
+                description: 'Chair and seating package',
+                note: 'Office, operator, clerk, and client seating grouped as one package.',
+                qty: 1,
+                unit: 'lot',
+                amount: 120000.00
+            },
+            {
+                description: 'CCTV and security package',
+                note: 'Night mode camera system with DVR and recording setup.',
+                qty: 1,
+                unit: 'lot',
+                amount: 48000.00
+            },
+            {
+                description: 'Furniture and joinery package',
+                note: 'Tables, credenza, display, cabinet, partition, seating, and bench work.',
+                qty: 1,
+                unit: 'lot',
+                amount: 138353.00
+            },
+            {
+                description: 'Painting and finish package',
+                note: 'Putty, luster finish, and paint coverage as per the shared bill structure.',
+                qty: 1,
+                unit: 'lot',
+                amount: 62925.00
+            }
+        ];
+
+        function getServiceFactor() {
+            const service = document.getElementById('service').value;
+            const factors = {
+                residential: 1.00,
+                commercial: 1.10,
+                renovation: 0.95,
+                interior: 1.08
+            };
+
+            return factors[service] || 1.00;
+        }
+
+        function getQualityFactor() {
+            const quality = document.getElementById('quality').value;
+            const factors = {
+                standard: 1.00,
+                premium: 1.18,
+                luxury: 1.35
+            };
+
+            return factors[quality] || 1.00;
+        }
+
+        function getScaleFactor() {
+            const area = parseFloat(document.getElementById('area').value) || referenceArea;
+            const areaFactor = area / referenceArea;
+            return areaFactor * getServiceFactor() * getQualityFactor();
+        }
+
         function updateAreaValue() {
             const area = document.getElementById('area').value;
             document.getElementById('areaValue').textContent = Number(area).toLocaleString();
-            document.getElementById('resultArea').textContent = Number(area).toLocaleString() + ' sq.ft';
         }
 
         function updateTimelineValue() {
@@ -717,36 +910,34 @@
         }
 
         function calculateEstimate() {
-            const service = document.getElementById('service').value;
             const area = parseInt(document.getElementById('area').value) || 1000;
-            const quality = document.getElementById('quality').value;
+            const scaleFactor = getScaleFactor();
+            const billBody = document.getElementById('billBody');
+            const total = estimateRows.reduce((sum, row) => sum + (row.amount * scaleFactor), 0);
 
-            const costPerSqft = {
-                'residential_standard': 650,
-                'residential_premium': 1000,
-                'residential_luxury': 1600,
-                'commercial_standard': 800,
-                'commercial_premium': 1200,
-                'commercial_luxury': 1800,
-                'renovation_standard': 500,
-                'renovation_premium': 800,
-                'renovation_luxury': 1200,
-                'interior_standard': 800,
-                'interior_premium': 1200,
-                'interior_luxury': 1800,
-            };
+            billBody.innerHTML = estimateRows.map((row, index) => {
+                const rate = row.amount * scaleFactor;
+                const amount = row.amount * scaleFactor;
 
-            const key = `${service}_${quality}`;
-            const perSqft = costPerSqft[key] || 650;
+                return `
+                    <tr>
+                        <td class="qty-cell">${index + 1}</td>
+                        <td>
+                            ${row.description}
+                            <span class="bill-item-note">${row.note}</span>
+                        </td>
+                        <td class="qty-cell">${row.qty.toLocaleString('en-IN')}</td>
+                        <td class="unit-cell">${row.unit}</td>
+                        <td class="rate-cell">₹${rate.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                        <td class="amount-cell">₹${amount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                    </tr>
+                `;
+            }).join('');
 
-            const materialCost = area * perSqft;
-            const laborCost = materialCost * 0.30;
-            const totalCost = materialCost + laborCost;
-
-            document.getElementById('resultPerSqft').textContent = '₹' + perSqft.toLocaleString();
-            document.getElementById('resultMaterial').textContent = '₹' + Math.round(materialCost).toLocaleString();
-            document.getElementById('resultLabor').textContent = '₹' + Math.round(laborCost).toLocaleString();
-            document.getElementById('resultTotal').textContent = '₹' + Math.round(totalCost).toLocaleString();
+            document.getElementById('summaryReferenceArea').textContent = area.toLocaleString('en-IN') + ' Sq.Ft';
+            document.getElementById('summaryScaleFactor').textContent = scaleFactor.toFixed(2) + 'x';
+            document.getElementById('summaryPackages').textContent = estimateRows.length.toString();
+            document.getElementById('resultTotal').textContent = '₹' + total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
 
         function handleSubmit(event) {
@@ -787,8 +978,10 @@
             }
 
             // All validations passed
-            alert(`Thank you ${name}! Your estimated quote is ${total}. We will contact you at ${phone} within 24 hours with a detailed breakdown.\n\nReminder: This is an approximate estimate. Final costs will be determined after site inspection.`);
+            alert(`Thank you ${name}! Your estimated quote is ${total}. We will contact you at ${phone} within 24 hours with a detailed breakdown.\n\nReminder: This is an approximate estimate based on the reference bill structure. Final costs will be determined after site inspection.`);
             event.target.reset();
+            updateAreaValue();
+            updateTimelineValue();
             calculateEstimate();
             return true;
         }
@@ -804,6 +997,8 @@
         });
 
         // Initialize on load
+        updateAreaValue();
+        updateTimelineValue();
         calculateEstimate();
     </script>
 </body>

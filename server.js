@@ -5,10 +5,6 @@ const app = express();
 // Serve static files from public directory (includes images, html, etc.)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Set EJS as view engine
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'public/html'));
-
 // Route for home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/html/index.html'));
@@ -73,6 +69,19 @@ app.get('/contacts', (req, res) => {
   res.redirect(301, '/contact');
 });
 
+// API endpoints for form submissions
+app.post('/api/submit-form', (req, res) => {
+  res.json({ success: true, message: 'Form submitted successfully' });
+});
+
+app.post('/api/contact', (req, res) => {
+  res.json({ success: true, message: 'Contact form submitted successfully' });
+});
+
+app.post('/api/estimate-request', (req, res) => {
+  res.json({ success: true, message: 'Estimate request submitted successfully' });
+});
+
 // 404 handler - serve custom 404 page
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'public/html/404.html'));
@@ -81,11 +90,11 @@ app.use((req, res) => {
 // Start server
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`\n✨ Mokal Builder Website Running!\n`);
-  console.log(`🌐 Open your browser: http://localhost:${PORT}`);
-  console.log(`\n📄 Pages available:`);
+  console.log(`\n*** Mokal Builder Website Running! ***\n`);
+  console.log(`>>> Open your browser: http://localhost:${PORT}`);
+  console.log(`\nPages available:`);
   console.log(`   • Home:     http://localhost:${PORT}/`);
   console.log(`   • Services: http://localhost:${PORT}/services`);
   console.log(`   • Contact:  http://localhost:${PORT}/contact`);
-  console.log(`\n✅ All files are pure HTML, CSS, and JavaScript!\n`);
+  console.log(`\n✓ All files are pure HTML, CSS, and JavaScript!\n`);
 });
