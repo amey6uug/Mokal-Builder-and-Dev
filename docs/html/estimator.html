@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -625,7 +625,7 @@
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <div class="logo-icon"><img src="/images/logos/logo.jpg" alt="Mokal Builder Logo"></div>
                 <div class="logo-text">
                     <h1>Mokal Builder</h1>
@@ -634,13 +634,13 @@
             </a>
             
             <div class="nav-links">
-                <a href="/" class="nav-link">Home</a>
-                <a href="/services" class="nav-link">Services</a>
-                <a href="/about" class="nav-link">About</a>
-                <a href="/portfolio" class="nav-link">Portfolio</a>
-                <a href="/faq" class="nav-link">FAQ</a>
-                <a href="/contact" class="nav-link">Contact</a>
-                <a href="/estimator" class="btn-nav">Get Estimate</a>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="html/services.html" class="nav-link">Services</a>
+                <a href="html/about.html" class="nav-link">About</a>
+                <a href="html/portfolio.html" class="nav-link">Portfolio</a>
+                <a href="html/faq.html" class="nav-link">FAQ</a>
+                <a href="html/contact.html" class="nav-link">Contact</a>
+                <a href="html/estimator.html" class="btn-nav">Get Estimate</a>
             </div>
         </div>
     </nav>
@@ -659,7 +659,7 @@
         
         <!-- DISCLAIMER -->
         <div style="max-width: 1200px; margin: 0 auto 40px; padding: 20px; background: #FFF3CD; border-left: 4px solid #FFC107; border-radius: 8px;">
-            <h4 style="color: #856404; margin-bottom: 10px; font-size: 1.1rem;">⚠️ Important Disclaimer</h4>
+            <h4 style="color: #856404; margin-bottom: 10px; font-size: 1.1rem;">âš ï¸ Important Disclaimer</h4>
             <p style="color: #856404; font-size: 0.95rem; line-height: 1.6; margin: 0;">
                 <strong>Please Note:</strong> The estimates provided by this calculator are approximate and for informational purposes only. 
                 Actual project costs may vary based on site conditions, material availability, design complexity, location, labor costs, and market fluctuations. 
@@ -734,7 +734,7 @@
 
             <!-- RESULTS -->
             <div class="estimator-results">
-                <h3>📊 Itemized Bill Structure</h3>
+                <h3>ðŸ“Š Itemized Bill Structure</h3>
                 <p class="bill-structure-note">
                     Reference bill structure based on your shared estimate. Values scale with area and finish level so you can use it as a live estimator for different project sizes.
                 </p>
@@ -772,11 +772,11 @@
 
                 <div class="estimate-total">
                     <div class="estimate-label">TOTAL ESTIMATED COST</div>
-                    <div class="estimate-amount" id="resultTotal">₹0</div>
+                    <div class="estimate-amount" id="resultTotal">â‚¹0</div>
                     <div class="estimate-note">
-                        ✓ Includes the reference cost structure you shared<br>
-                        ✓ Scales with project size and finish level<br>
-                        ✓ Final quote will depend on site inspection and exact scope
+                        âœ“ Includes the reference cost structure you shared<br>
+                        âœ“ Scales with project size and finish level<br>
+                        âœ“ Final quote will depend on site inspection and exact scope
                     </div>
                 </div>
             </div>
@@ -793,26 +793,26 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul style="list-style: none;">
-                    <li style="margin-bottom: 8px;"><a href="/index">Home</a></li>
-                    <li style="margin-bottom: 8px;"><a href="/about">About</a></li>
-                    <li style="margin-bottom: 8px;"><a href="/portfolio">Portfolio</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li style="margin-bottom: 8px;"><a href="index.html">Home</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/about.html">About</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/portfolio.html">Portfolio</a></li>
+                    <li><a href="html/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
                 <ul style="list-style: none;">
-                    <li style="margin-bottom: 8px;"><a href="/services">Residential</a></li>
-                    <li style="margin-bottom: 8px;"><a href="/services">Commercial</a></li>
-                    <li style="margin-bottom: 8px;"><a href="/services">Renovation</a></li>
-                    <li><a href="/services">More Services</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Residential</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Commercial</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Renovation</a></li>
+                    <li><a href="html/services.html">More Services</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
                 <p style="margin-bottom: 8px;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i>+91-9876543210</p>
-                <p style="margin-bottom: 8px;">📧 info@mokalbuilder.com</p>
-                <p>📍 Mumbai, India</p>
+                <p style="margin-bottom: 8px;">ðŸ“§ info@mokalbuilder.com</p>
+                <p>ðŸ“ Mumbai, India</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -928,8 +928,8 @@
                         </td>
                         <td class="qty-cell">${row.qty.toLocaleString('en-IN')}</td>
                         <td class="unit-cell">${row.unit}</td>
-                        <td class="rate-cell">₹${rate.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-                        <td class="amount-cell">₹${amount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                        <td class="rate-cell">â‚¹${rate.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                        <td class="amount-cell">â‚¹${amount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                     </tr>
                 `;
             }).join('');
@@ -937,7 +937,7 @@
             document.getElementById('summaryReferenceArea').textContent = area.toLocaleString('en-IN') + ' Sq.Ft';
             document.getElementById('summaryScaleFactor').textContent = scaleFactor.toFixed(2) + 'x';
             document.getElementById('summaryPackages').textContent = estimateRows.length.toString();
-            document.getElementById('resultTotal').textContent = '₹' + total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById('resultTotal').textContent = 'â‚¹' + total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
 
         function handleSubmit(event) {
@@ -1003,6 +1003,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
